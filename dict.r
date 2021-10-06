@@ -1,4 +1,4 @@
-pod::use(stats[setNames])
+box::use(stats[setNames])
 
 #' Create a list with computed names
 #'
@@ -32,7 +32,7 @@ dict = function (...) {
 
 .on_load = function (ns) {
     ns$name_interpolate = if (requireNamespace('glue')) {
-        pod::use(glue[glue])
+        box::use(glue[glue])
 
         function (expr, caller) {
             glue(eval(expr[[2L]], caller), .envir = caller)
